@@ -1,5 +1,5 @@
 package com.tuapp.bibliotecaapi.repository;
 
-public class LirboRepository {
+public class AutorRepository {
 
 }
