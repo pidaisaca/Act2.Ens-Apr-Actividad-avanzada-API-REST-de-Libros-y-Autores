@@ -1,4 +1,4 @@
-package com.tuapp.bibliotecaapi.biblioteca;
+package com.tuapp.bibliotecaapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
