@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import java.util.List;
 
@@ -18,6 +19,7 @@ public class Autor {
     private String nombre;
     private String nacionalidad;
 
+    @OneToMany(mappedBy = "libros")
     private List<Libro> libros;
 
     public Autor(){}
