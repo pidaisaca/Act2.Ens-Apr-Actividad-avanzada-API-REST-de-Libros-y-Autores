@@ -18,7 +18,7 @@ import com.tuapp.bibliotecaapi.service.LibroService;
 
 
 @RestController
-@RequestMapping("/api/v1/libro")
+@RequestMapping("/api/v1/libros")
 public class LibroController {
 
     private final LibroService libroService;
