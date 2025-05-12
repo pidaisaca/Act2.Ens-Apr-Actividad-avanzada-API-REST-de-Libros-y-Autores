@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.tuapp.bibliotecaapi.model.Libro;
@@ -40,13 +41,13 @@ public class LibroController {
     }
 
     @PostMapping
-    public Libro createLibro(Libro libro) {
+    public Libro createLibro(@RequestBody Libro libro) {
         return libroService.crearLibro(libro);
     }
 
     @PutMapping("/{id}")
-    public Libro updateLibro(@PathVariable Long id, @RequestBody Libro libro) {
-        return libroService.updateLibro(libro);
+    public Libro update(@RequestBody Libro mascota, @PathVariable Long id) {
+        return libroService.update(mascota, id);
     }
 
     @DeleteMapping("/{id}")
@@ -54,6 +55,13 @@ public class LibroController {
         libroService.deleteLibro(id);
     }
 
+    @GetMapping("/buscar")
+public List<Libro> buscar(@RequestParam(required = false) String titulo, 
+                           @RequestParam(required = false) Integer anio, 
+                           @RequestParam(required = false) String sortBy, 
+                           @RequestParam(required = false) String order) {
+    return libroService.buscar(titulo, anio, sortBy, order);
+}
     
     
 }
