@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.tuapp.bibliotecaapi.model.Autor;
+import com.tuapp.bibliotecaapi.model.Libro;
 import com.tuapp.bibliotecaapi.repository.AutorRepository;
 
 @Service
@@ -32,11 +33,16 @@ public class AutorService {
         autorRepository.deleteById(id);
     }
 
-    public Autor updateAutor(Autor autor, Long id) {
-        {
+    public Autor update(Autor autor, Long id) {
+        return autorRepository.findById(id).map(a -> {
+            a.setNombre(autor.getNombre());
+            a.setNacionalidad(autor.getNacionalidad());
+            a.setLibros(autor.getLibros());
+            return autorRepository.save(a);
+        }).orElseGet(() -> {
             autor.setId_autor(id);
             return autorRepository.save(autor);
-        }
+        });
     }
 
 }
