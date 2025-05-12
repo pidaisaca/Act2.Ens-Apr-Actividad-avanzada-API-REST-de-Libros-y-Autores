@@ -35,14 +35,13 @@ public class AutorController {
     }
 
     @PostMapping
-    public Autor crearAutor(Autor autor) {
+    public Autor crearAutor(@RequestBody Autor autor) {
         return autorService.crearAutor(autor);
     }
 
     @PutMapping("/{id}")
-    public Autor updateAutor(@PathVariable Long id, @RequestBody Autor autor) {
-        autor.setId_autor(id);
-        return autorService.updateAutor(autor, id);
+    public Autor updateAutor(@RequestBody Autor autor, @PathVariable Long id) {
+        return autorService.update(autor, id);
     }
 
     @DeleteMapping("/{id}")
