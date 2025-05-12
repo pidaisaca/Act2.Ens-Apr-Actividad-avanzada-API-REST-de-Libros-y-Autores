@@ -7,16 +7,19 @@ import java.util.Comparator;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.tuapp.bibliotecaapi.model.Autor;
 import com.tuapp.bibliotecaapi.model.Libro;
-import com.tuapp.bibliotecaapi.repository.LibroRepository;
+import com.tuapp.bibliotecaapi.repository.*;
 
 @Service
 public class LibroService {
 
     private final LibroRepository libroRepository;
+    private final AutorRepository autorRepository;
 
-    public LibroService(LibroRepository libroRepository) {
+    public LibroService(LibroRepository libroRepository, AutorRepository autorRepository) {
         this.libroRepository = libroRepository;
+        this.autorRepository = autorRepository;
     }
 
     public List<Libro> getAllLibros() {
@@ -28,6 +31,9 @@ public class LibroService {
     }
 
     public Libro crearLibro(Libro libro) {
+        Long idAutor = libro.getAutor().getId_autor();
+        Autor autor = autorRepository.findById(idAutor).orElse(null);
+        libro.setAutor(autor);
         return libroRepository.save(libro);
     }
 

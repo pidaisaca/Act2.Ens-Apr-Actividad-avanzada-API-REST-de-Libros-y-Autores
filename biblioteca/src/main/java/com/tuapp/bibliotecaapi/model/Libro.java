@@ -21,7 +21,7 @@ public class Libro {
     private int anioPublicacion;
 
     @ManyToOne
-    @JoinColumn(name = "autor_id")
+    @JoinColumn(name = "id_autor")
     private Autor autor;
 
     public Libro() {
