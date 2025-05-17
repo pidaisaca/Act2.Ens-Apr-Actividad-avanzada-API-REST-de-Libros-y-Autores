@@ -1,5 +1,7 @@
 package com.tuapp.bibliotecaapi.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -66,7 +68,8 @@ public class Libro {
     public void setAnioPublicacion(int anioPublicacion) {
         this.anioPublicacion = anioPublicacion;
     }
-
+    
+    @JsonManagedReference
     public Autor getAutor() {
         return autor;
     }
@@ -79,3 +82,4 @@ public class Libro {
 
 
 }
+
