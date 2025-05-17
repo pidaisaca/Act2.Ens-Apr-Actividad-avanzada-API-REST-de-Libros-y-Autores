@@ -8,6 +8,8 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 @Table(name = "Autor")
 public class Autor {
@@ -19,7 +21,7 @@ public class Autor {
     private String nombre;
     private String nacionalidad;
 
-    @OneToMany(mappedBy = "libros")
+    @OneToMany(mappedBy = "autor")
     private List<Libro> libros;
 
     public Autor(){}
@@ -55,6 +57,7 @@ public class Autor {
         this.nacionalidad = nacionalidad;
     }
 
+    @JsonBackReference
     public List<Libro> getLibros() {
         return libros;
     }
