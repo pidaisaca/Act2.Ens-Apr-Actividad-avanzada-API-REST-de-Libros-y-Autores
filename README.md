@@ -39,7 +39,7 @@ Capa intermedia entre la API y los datos. Contiene AutorService.java y LibroServ
 
 ### GET	/api/v1/libros	Listar todos los libros
 Lista todos los libros de la base de datos
-![alt text](imag/GET libros.png)
+![alt text](imag/GET_libros.png)
 
 ### GET	/api/v1/libros/{id}	Obtener libro por ID
 Muestra el libro con la ID que le pasamos
