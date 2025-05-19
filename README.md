@@ -15,7 +15,21 @@ Aplicar relaciones entre entidades, búsquedas y ordenación en Spring Boot.
     - Postman
 
 # Estructura de carpetas
+La aplicación se encuentra dentro de 
 
+## biblioteca/src/main/java/com/tuapp/bibliotecaapi
+
+
+Dentro están los siguientes paquetes:
+
+# Controller
+Paquete que contiene las clases AutorController.java y LibroController.java
+# Model
+Paquete que con los datos de las entidades Autor y Libro. Contiene Autor.java y libro.java
+# Repository
+Interfaz para acceder a la base de datos. Contiene AutoRepository.java y LibroRepository.java
+# Service
+Capa intermedia entre la API y los datos. Contiene AutorService.java y LibroService.java
 
 # Demostración de funcionalidades
 
