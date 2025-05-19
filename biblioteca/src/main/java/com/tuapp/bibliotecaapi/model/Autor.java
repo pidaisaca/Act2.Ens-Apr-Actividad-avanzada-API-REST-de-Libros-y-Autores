@@ -22,6 +22,7 @@ public class Autor {
     private String nacionalidad;
 
     @OneToMany(mappedBy = "autor")
+    @JsonBackReference
     private List<Libro> libros;
 
     public Autor(){}
@@ -57,7 +58,6 @@ public class Autor {
         this.nacionalidad = nacionalidad;
     }
 
-    @JsonBackReference
     public List<Libro> getLibros() {
         return libros;
     }

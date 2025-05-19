@@ -24,6 +24,7 @@ public class Libro {
 
     @ManyToOne
     @JoinColumn(name = "autor_id")
+    @JsonManagedReference
     private Autor autor;
 
     public Libro() {
@@ -69,7 +70,6 @@ public class Libro {
         this.anioPublicacion = anioPublicacion;
     }
     
-    @JsonManagedReference
     public Autor getAutor() {
         return autor;
     }
