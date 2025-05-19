@@ -18,6 +18,7 @@ Aplicar relaciones entre entidades, búsquedas y ordenación en Spring Boot.
 La aplicación se encuentra dentro de 
 
 ## biblioteca/src/main/java/com/tuapp/bibliotecaapi
+![alt text](imag/Estructura.png)
 
 
 Dentro están los siguientes paquetes:
