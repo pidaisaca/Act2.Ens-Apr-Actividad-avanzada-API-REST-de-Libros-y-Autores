@@ -58,6 +58,7 @@ Elimina un libro en base a su ID
 ![alt text](imag/DELETE_libro.png)
 ### GET	/api/v1/libros/buscar	Buscar con filtros y ordenación
 Busca un libro con filtro y ordenacion
+![alt text](imag/DELETE_libro.png)
 
 ## Apartado de autores
 
