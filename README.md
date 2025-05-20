@@ -45,8 +45,8 @@ Lista todos los libros de la base de datos
 Muestra el libro con la ID que le pasamos
 ![alt text](imag/DELETE_libro.png)
 
-### POST	/api/v1/libros	Crear nuevo libro (vincular a autor)
-Crea un nuevo libro al que vinculamos un autor (Requiere haber creado el autor previamente)
+### POST	/api/v1/libros	Crear nuevo libro
+Crea un nuevo libro (el autor se pondrá como nulo y se actualizará después)
 ![alt text](imag/POST_libros.png)
 
 ### PUT	/api/v1/libros/{id}	Actualizar libro
